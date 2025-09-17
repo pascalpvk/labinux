@@ -47,8 +47,10 @@ params:
     displayTitle: true
     displayLogo: true
     logo:
-      path: assets/pingouin_architecte_logo.svg
-      dark: /assets/pingouin_architecte_logo.svg 
+      path: images/pingouin_architecte_logo.svg
+      dark: images/logo_pinguin_lab.png 
+      # path: images/logo.svg
+      # dark: images/logo-dark.svg 
       link: /
       width: 80
       height: 80

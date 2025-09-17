@@ -1,6 +1,6 @@
 ---
-title: About
+title: Labinux, Open-source pour l'éducation technique
 type: about
 ---
 
-This is the about page.
+# La motivation 

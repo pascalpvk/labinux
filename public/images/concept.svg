@@ -1,0 +1,164 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Définitions -->
+  <defs>
+    <!-- Gradient principal bleu-vert tech -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099CC;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient secondaire vert -->
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00E676;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00C853;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient neutre -->
+    <linearGradient id="neutralGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#546E7A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#37474F;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Ombre portée -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Cercle de fond subtil -->
+  <circle cx="120" cy="120" r="110" fill="#F5F5F5" opacity="0.5"/>
+  
+  <!-- Hexagone central (représentant la structure/conteneur) -->
+  <g transform="translate(120, 120)">
+    <!-- Hexagone principal -->
+    <path d="M -40 -23 L -40 23 L 0 46 L 40 23 L 40 -23 L 0 -46 Z" 
+          fill="url(#primaryGradient)" 
+          filter="url(#shadow)"
+          opacity="0.9"/>
+    
+    <!-- Terminal/Console à l'intérieur -->
+    <g transform="translate(-25, -20)">
+      <rect x="0" y="0" width="50" height="30" rx="2" fill="#263238" opacity="0.9"/>
+      <!-- Barre de titre -->
+      <rect x="0" y="0" width="50" height="8" rx="2" fill="#1E282D"/>
+      <!-- Points de fenêtre -->
+      <circle cx="5" cy="4" r="1.5" fill="#FF5252"/>
+      <circle cx="10" cy="4" r="1.5" fill="#FFEB3B"/>
+      <circle cx="15" cy="4" r="1.5" fill="#69F0AE"/>
+      <!-- Lignes de code -->
+      <line x1="4" y1="12" x2="15" y2="12" stroke="#00E676" stroke-width="1.5"/>
+      <line x1="18" y1="12" x2="30" y2="12" stroke="#00D4FF" stroke-width="1.5"/>
+      <line x1="4" y1="17" x2="20" y2="17" stroke="#FF9800" stroke-width="1.5"/>
+      <line x1="23" y1="17" x2="35" y2="17" stroke="#00D4FF" stroke-width="1.5"/>
+      <line x1="4" y1="22" x2="12" y2="22" stroke="#00E676" stroke-width="1.5"/>
+      <line x1="15" y1="22" x2="28" y2="22" stroke="#E91E63" stroke-width="1.5"/>
+      <!-- Curseur clignotant -->
+      <rect x="30" y="21" width="6" height="2" fill="#00E676">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Orbites/Connexions (représentant le déploiement) -->
+  <g transform="translate(120, 120)" opacity="0.7">
+    <!-- Orbite 1 -->
+    <circle cx="0" cy="0" r="75" fill="none" stroke="url(#primaryGradient)" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Orbite 2 -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="url(#secondaryGradient)" stroke-width="1" stroke-dasharray="3,7" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="40s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Nœuds satellites (environnements déployés) -->
+  <g transform="translate(120, 120)">
+    <!-- Nœud 1 - Docker -->
+    <g transform="translate(-75, 0)">
+      <circle cx="0" cy="0" r="18" fill="white" filter="url(#shadow)"/>
+      <circle cx="0" cy="0" r="16" fill="url(#primaryGradient)"/>
+      <!-- Icône Docker simplifiée -->
+      <path d="M -8 -2 L -8 2 L 8 2 L 8 -2 Z M -6 -4 L -6 -2 M -2 -4 L -2 -2 M 2 -4 L 2 -2 M 6 -4 L 6 -2" 
+            stroke="white" stroke-width="1.5" fill="none"/>
+    </g>
+    
+    <!-- Nœud 2 - Python -->
+    <g transform="translate(75, 0)">
+      <circle cx="0" cy="0" r="18" fill="white" filter="url(#shadow)"/>
+      <circle cx="0" cy="0" r="16" fill="url(#secondaryGradient)"/>
+      <!-- Symbole Python simplifié -->
+      <path d="M -4 -6 Q -6 -6 -6 -4 L -6 0 Q -6 2 -4 2 L 4 2 Q 6 2 6 0 L 6 -4 Q 6 -6 4 -6 Z" 
+            stroke="white" stroke-width="1.5" fill="none"/>
+      <circle cx="-2" cy="-2" r="1.5" fill="white"/>
+      <circle cx="2" cy="2" r="1.5" fill="white"/>
+    </g>
+    
+    <!-- Nœud 3 - Linux -->
+    <g transform="translate(0, -75)">
+      <circle cx="0" cy="0" r="18" fill="white" filter="url(#shadow)"/>
+      <circle cx="0" cy="0" r="16" fill="url(#neutralGradient)"/>
+      <!-- Pingouin ultra simplifié -->
+      <ellipse cx="0" cy="2" rx="5" ry="7" fill="white"/>
+      <ellipse cx="0" cy="-2" rx="4" ry="4" fill="white"/>
+      <circle cx="-1.5" cy="-2" r="1" fill="#37474F"/>
+      <circle cx="1.5" cy="-2" r="1" fill="#37474F"/>
+    </g>
+    
+    <!-- Nœud 4 - CI/CD -->
+    <g transform="translate(0, 75)">
+      <circle cx="0" cy="0" r="18" fill="white" filter="url(#shadow)"/>
+      <circle cx="0" cy="0" r="16" fill="url(#primaryGradient)"/>
+      <!-- Symbole infini/cycle -->
+      <path d="M -6 0 Q -6 -4 -2 -4 Q 2 -4 2 0 Q 2 4 6 4 Q 10 4 10 0 Q 10 -4 6 -4 Q 2 -4 2 0 Q 2 4 -2 4 Q -6 4 -6 0" 
+            stroke="white" stroke-width="2" fill="none" transform="scale(0.7)"/>
+    </g>
+  </g>
+  
+  <!-- Icône éducation (mortier de diplôme) -->
+  <g transform="translate(120, 35)">
+    <path d="M 0 10 L -20 0 L 0 -8 L 20 0 Z" fill="url(#neutralGradient)" opacity="0.8"/>
+    <path d="M -20 0 L -20 8 L -15 10 L -15 5" stroke="#37474F" stroke-width="2" fill="none"/>
+    <circle cx="-15" cy="12" r="2" fill="#37474F"/>
+  </g>
+  
+  <!-- Texte "Click & Deploy" -->
+  <g transform="translate(120, 200)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="11" font-weight="500" fill="#546E7A" text-anchor="middle">
+      Click &amp; Deploy
+    </text>
+  </g>
+  
+  <!-- Élément de connexion/réseau -->
+  <g opacity="0.3">
+    <!-- Lignes de connexion entre les nœuds -->
+    <line x1="120" y1="120" x2="45" y2="120" stroke="#0099CC" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="120" y1="120" x2="195" y2="120" stroke="#00C853" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="120" y1="120" x2="120" y2="45" stroke="#546E7A" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="120" y1="120" x2="120" y2="195" stroke="#0099CC" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+  
+  <!-- Particules flottantes (représentant le déploiement dynamique) -->
+  <g opacity="0.6">
+    <circle cx="60" cy="60" r="2" fill="#00D4FF">
+      <animate attributeName="cy" values="60;55;60" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="80" r="2" fill="#00E676">
+      <animate attributeName="cy" values="80;75;80" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="160" cy="160" r="2" fill="#00D4FF">
+      <animate attributeName="cy" values="160;155;160" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="80" cy="180" r="2" fill="#00E676">
+      <animate attributeName="cy" values="180;175;180" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
